@@ -16,3 +16,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 1. Create a organization on GitHub.
 2. Create a repository on the organization.
 3. Create a TypeScript app on my PC.
+4. Use ESLint for linting and Prettier for formatting.
+5. Use commitlint to manage Git commit messages.
