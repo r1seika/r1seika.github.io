@@ -1,0 +1,40 @@
+.current-weather {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+
+  .wrap {
+    max-width: 800px;
+    min-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    .location-name {
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .current-wrap {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 10px 10px;
+
+      .current-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .item-up {
+          height: 64px;
+          line-height: 64px;
+        }
+
+        .item-down {
+          height: 20px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}

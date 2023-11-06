@@ -1,26 +1,26 @@
 import { useState } from 'react';
-import { locationInputCallback } from '../../types';
+import { LocationInputCallback } from '../../types';
 import './index.scss';
 
-type Params = {
-  onCallback: locationInputCallback;
+type LocationInputParams = {
+  onCallback: LocationInputCallback;
 };
 
-const LocationInput = function (params: Params) {
+const LocationInput = function (params: LocationInputParams) {
   const [inputLocation, setInputLocation] = useState('');
   const [errMsg, setErrMsg] = useState('');
   const { onCallback } = params;
 
   const handleKeyDown = (event: { key: string }) => {
     if (event.key === 'Enter') {
-      fetch(`http://localhost:3001/current?location=${inputLocation}`)
+      fetch(`http://localhost:3001/forecast?location=${inputLocation}`)
         .then(response => response.json())
         .then(data => {
-          const { code, message, location, current } = data;
+          const { code, message } = data;
           if (code && message) {
             setErrMsg(message);
           } else {
-            onCallback(location, current);
+            onCallback(data);
             setErrMsg('');
           }
         })

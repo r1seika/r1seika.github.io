@@ -1,17 +1,22 @@
-import React from 'react';
+import { useState } from 'react';
+import { ForecastResponse } from '../../types';
 import LocationInput from '../../components/LocationInput/index';
 import CurrentWeather from './comps/CurrentWeather';
+import NextNDays from './comps/NextNDays';
 import './index.scss';
 
-const Home: React.FC = () => {
-  function onCallback(location: any, current: any) {
-    console.log(location, current);
+const Home = () => {
+  const [forecastData, setForecastData] = useState({});
+
+  function onCallback(forecastResponse: ForecastResponse) {
+    setForecastData(forecastResponse);
   }
   return (
     <div className="home">
       <h1 className="app-name">Gaudy Weather</h1>
       <LocationInput onCallback={onCallback} />
-      <CurrentWeather />
+      <CurrentWeather forecastData={forecastData} />
+      <NextNDays forecastData={forecastData} />
     </div>
   );
 };
