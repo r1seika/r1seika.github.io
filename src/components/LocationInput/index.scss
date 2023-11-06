@@ -1,0 +1,22 @@
+.location-input {
+  display: flex;
+  justify-content: center;
+
+  .wrap {
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+
+    .label {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .error-message {
+      height: 20px;
+      line-height: 20px;
+      color: red;
+    }
+  }
+}
