@@ -34,5 +34,7 @@ It took me about 5.5 hours.
 
 ### TODO
 
-1. Jest for test
-2. More infomation to show such as temperature of each hour diplayed by ECharts
+1. Use [search/autocomplete api](https://www.weatherapi.com/api-explorer.aspx#search) in location input with debounce
+2. Jest for test
+3. More infomation to show such as temperature of each hour diplayed by ECharts
+4. Server optimize. Such as limit the request frequency, use https, etc.
