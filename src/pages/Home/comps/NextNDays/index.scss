@@ -1,11 +1,11 @@
 .next-n-days {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin: 30px;
 
   .wrap {
-    max-width: 800px;
-    min-width: 400px;
+    width: 800px;
+    min-width: 375px;
     border: 1px solid #ccc;
     border-radius: 5px;
 
@@ -13,6 +13,7 @@
       border-bottom: 1px solid #ccc;
       padding: 10px;
     }
+
     .forecast-wrap {
       display: flex;
       justify-content: space-between;
@@ -23,6 +24,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        cursor: pointer;
 
         .item-day {
           height: 20px;
@@ -33,6 +35,39 @@
         .item-condition-pic {
           height: 64px;
           line-height: 64px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .next-n-days {
+    .wrap {
+      margin: 20px;
+
+      .forecast-wrap {
+        flex-direction: column;
+
+        .forecast-item {
+          flex-direction: row;
+          justify-content: space-between;
+
+          .item-up {
+            height: 40px;
+
+            &.text {
+              justify-content: right;
+            }
+
+            img {
+              height: 100%;
+            }
+          }
+
+          .item-down {
+            width: 50%;
+          }
         }
       }
     }

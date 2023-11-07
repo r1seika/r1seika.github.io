@@ -1,4 +1,5 @@
-import { ForecastResponse } from '../../../../types';
+import { useNavigate } from 'react-router-dom';
+import { ForecastResponse, ForecastDay } from '../../../../types';
 import './index.scss';
 
 type CurrentWeatherParams = {
@@ -16,11 +17,19 @@ const numberToDay = [
 ];
 
 const NextNDays = function (params: CurrentWeatherParams) {
+  const navigate = useNavigate();
   const {
-    forecastData: { forecast },
+    forecastData: { location, forecast },
   } = params;
 
   if (!forecast) return null;
+
+  const goToHome = function (location?: string, item?: ForecastDay) {
+    navigate(`/detail?location=${location}&date=${item?.date}`, {
+      state: item,
+    });
+  };
+
   return (
     <div className="next-n-days">
       <div className="wrap">
@@ -32,7 +41,13 @@ const NextNDays = function (params: CurrentWeatherParams) {
               : 'Today';
 
             return (
-              <div className="forecast-item">
+              <div
+                onClick={() => {
+                  goToHome(location?.name, item);
+                }}
+                className="forecast-item"
+                key={index}
+              >
                 <span className="item-day">{day}</span>
                 <img
                   src={item?.day?.condition?.icon}

@@ -1,32 +1,53 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { LocationInputCallback } from '../../types';
 import './index.scss';
 
 type LocationInputParams = {
-  onCallback: LocationInputCallback;
+  onEnter?: (location: string) => void;
+  onCallback?: LocationInputCallback;
 };
 
 const LocationInput = function (params: LocationInputParams) {
   const [inputLocation, setInputLocation] = useState('');
   const [errMsg, setErrMsg] = useState('');
-  const { onCallback } = params;
+  const { onEnter, onCallback } = params;
+
+  const getForecastData = (
+    location: string,
+    onCallback?: LocationInputCallback,
+  ) => {
+    fetch(`http://localhost:3001/forecast?location=${location}`)
+      .then(response => response.json())
+      .then(data => {
+        const { code, message } = data;
+        if (code && message) {
+          setErrMsg(message);
+        } else if (onCallback) {
+          onCallback(data);
+          setErrMsg('');
+        }
+      })
+      .catch(error => {
+        setErrMsg('Request failed.');
+      });
+  };
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const location = urlParams.get('location');
+    if (location) {
+      setInputLocation(location);
+      getForecastData(location, onCallback);
+    }
+  }, [onCallback]);
 
   const handleKeyDown = (event: { key: string }) => {
     if (event.key === 'Enter') {
-      fetch(`http://localhost:3001/forecast?location=${inputLocation}`)
-        .then(response => response.json())
-        .then(data => {
-          const { code, message } = data;
-          if (code && message) {
-            setErrMsg(message);
-          } else {
-            onCallback(data);
-            setErrMsg('');
-          }
-        })
-        .catch(error => {
-          setErrMsg('Request failed.');
-        });
+      if (onEnter) {
+        onEnter(inputLocation);
+        return;
+      }
+      getForecastData(inputLocation, onCallback);
     }
   };
 

@@ -1,14 +1,15 @@
-.current-weather {
+.weather-info {
   display: flex;
   justify-content: center;
   margin: 30px;
 
   .wrap {
-    width: 600px;
+    width: 800px;
+    min-width: 375px;
     border: 1px solid #ccc;
     border-radius: 5px;
 
-    .location-name {
+    .title {
       border-bottom: 1px solid #ccc;
       padding: 10px;
     }
@@ -46,7 +47,7 @@
 }
 
 @media (max-width: 600px) {
-  .current-weather {
+  .weather-info {
     .wrap {
       margin: 20px;
 
