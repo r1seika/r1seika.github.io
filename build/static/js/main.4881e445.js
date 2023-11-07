@@ -1,4 +1,4 @@
-/*! For license information please see main.f35cbd7f.js.LICENSE.txt */
+/*! For license information please see main.4881e445.js.LICENSE.txt */
 !(function () {
   'use strict';
   var e = {
@@ -10827,7 +10827,7 @@
             u = e.onEnter,
             c = e.onCallback,
             f = function (e, n) {
-              fetch('http://localhost:3001/forecast?location='.concat(e))
+              fetch('http://43.132.201.188/forecast?location='.concat(e))
                 .then(function (e) {
                   return e.json();
                 })
@@ -11282,4 +11282,4 @@
         Ge();
     })();
 })();
-//# sourceMappingURL=main.f35cbd7f.js.map
+//# sourceMappingURL=main.4881e445.js.map

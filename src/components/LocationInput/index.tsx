@@ -16,7 +16,7 @@ const LocationInput = function (params: LocationInputParams) {
     location: string,
     onCallback?: LocationInputCallback,
   ) => {
-    fetch(`http://localhost:3001/forecast?location=${location}`)
+    fetch(`http://43.132.201.188/forecast?location=${location}`)
       .then(response => response.json())
       .then(data => {
         const { code, message } = data;
