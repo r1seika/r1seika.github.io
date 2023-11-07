@@ -1,4 +1,4 @@
-/*! For license information please see main.77ff560a.js.LICENSE.txt */
+/*! For license information please see main.48dac13e.js.LICENSE.txt */
 !(function () {
   'use strict';
   var e = {
@@ -9294,7 +9294,7 @@
         Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
         Object.defineProperty(e, '__esModule', { value: !0 });
     }),
-    (t.p = '/'),
+    (t.p = './'),
     (function () {
       var e = { 179: 0 };
       t.f.j = function (n, r) {
@@ -11259,4 +11259,4 @@
         Ge();
     })();
 })();
-//# sourceMappingURL=main.77ff560a.js.map
+//# sourceMappingURL=main.48dac13e.js.map
