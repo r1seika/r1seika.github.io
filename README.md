@@ -2,9 +2,9 @@
 
 ## Available Scripts
 
-In the project directory：
+In the project directory, run `npm start`
 
-### `npm start`
+Clone the repo [https://github.com/r1seika/gaudy-weather-server](https://github.com/r1seika/gaudy-weather-server) and run `node app.js`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
