@@ -1,4 +1,4 @@
-/*! For license information please see main.c78a4372.js.LICENSE.txt */
+/*! For license information please see main.1dabddc8.js.LICENSE.txt */
 !(function () {
   'use strict';
   var e = {
@@ -11050,7 +11050,7 @@
             children: [
               (0, Ae.jsx)('h1', {
                 className: 'app-name',
-                children: 'Gaudy Weather',
+                children: 'Gaudiy Weather',
               }),
               (0, Ae.jsx)(Be, { onCallback: a }),
               (0, Ae.jsx)(Ve, { forecastData: t }),
@@ -11259,4 +11259,4 @@
         Ge();
     })();
 })();
-//# sourceMappingURL=main.c78a4372.js.map
+//# sourceMappingURL=main.1dabddc8.js.map

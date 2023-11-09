@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      <h1 className="app-name">Gaudy Weather</h1>
+      <h1 className="app-name">Gaudiy Weather</h1>
       <LocationInput onCallback={onCallback} />
       <CurrentWeather forecastData={forecastData} />
       <NextNDays forecastData={forecastData} />

@@ -1,4 +1,4 @@
-# A weather App for Gaudy's frontend coding test
+# A weather App for Gaudiy's frontend coding test
 
 ## Available Scripts
 
